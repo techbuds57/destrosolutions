@@ -2318,14 +2318,7 @@
             transition: opacity 0.5s ease;
         }
 
-        /* Theme-specific hero backgrounds */
-        [data-theme="dark"] .hero-bg-image {
-            content: url('/images/dark1.jpg');
-        }
-
-        [data-theme="light"] .hero-bg-image {
-            content: url('/images/light.jpg');
-        }
+        /* Theme-specific hero backgrounds - handled by JavaScript */
 
         /* Hero text styling */
         .hero-title {
@@ -3682,13 +3675,13 @@
 
         if (currentTheme === 'light') {
             html.setAttribute('data-theme', 'dark');
-            if (heroImage) heroImage.src = '/images/dark1.jpg';
+            if (heroImage) heroImage.src = 'images/dark1.jpg';
             if (navbarSunIcon) navbarSunIcon.classList.remove('hidden');
             if (navbarMoonIcon) navbarMoonIcon.classList.add('hidden');
             localStorage.setItem('theme', 'dark');
         } else {
             html.setAttribute('data-theme', 'light');
-            if (heroImage) heroImage.src = '/images/light.jpg';
+            if (heroImage) heroImage.src = 'images/light.jpg';
             if (navbarSunIcon) navbarSunIcon.classList.add('hidden');
             if (navbarMoonIcon) navbarMoonIcon.classList.remove('hidden');
             localStorage.setItem('theme', 'light');
@@ -3708,11 +3701,11 @@
         // Update hero background image and navbar icons based on theme
         if (heroImage) {
             if (savedTheme === 'light') {
-                heroImage.src = '/images/light.jpg';
+                heroImage.src = 'images/light.jpg';
                 if (navbarSunIcon) navbarSunIcon.classList.add('hidden');
                 if (navbarMoonIcon) navbarMoonIcon.classList.remove('hidden');
             } else {
-                heroImage.src = '/images/dark1.jpg';
+                heroImage.src = 'images/dark1.jpg';
                 if (navbarSunIcon) navbarSunIcon.classList.remove('hidden');
                 if (navbarMoonIcon) navbarMoonIcon.classList.add('hidden');
             }
